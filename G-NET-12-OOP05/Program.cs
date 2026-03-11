@@ -16,7 +16,7 @@
              We use interfaces to achieve Loose Coupling. 
              This means your code doesn't depend on a specific class,
              making it easier to change or swap parts of the system later.
-            
+
              *Three Benefits of Interfaces : 
              Flexibility: Easily swap one implementation for another
              (e.g., changing database types).
@@ -88,8 +88,84 @@
               ((IArabicSpeaker)translator).Greet();
         */
             #endregion
+            //=============================================================
+            #region Q3:
+            /*
+        * Explain the difference between a shallow copy and a deep copy.
+        * When would you use each one? 
+        * What is the risk of using a shallow copy when the object has reference - type fields ?
+        
+        - Shallow Copy: Copies the object’s bitwise values. 
+          For Value Types, it copies the data. 
+          For Reference Types, it only copies the memory address (reference).
+          Both objects will point to the same internal object in memory.
+
+        - Deep Copy: Creates a completely new copy of the object and 
+             all objects referenced by it.
+            It duplicates the entire object tree.
+
+        ----------------------------------------------------
+
+        * Shallow Copy:
+
+         Use it when the object contains only Value Types (int, bool, etc.)
+          or Immutable types (string).
+
+         Use it when you specifically want multiple objects to share
+         the same underlying data to save memory.
+
+        * Deep Copy:
+
+         Use it when you need a totally independent copy.
+         If you modify the copy, the original must remain unchanged.
+
+         Necessary for complex objects with nested lists or other classes.
+
+        ------------------------------------------------------
+        * What is the risk of using a shallow copy when the object has reference-type fields?
+        * 
+          The Risk: The main risk is Data Corruption or unintended side effects. 
+          Since both objects share the same memory address for reference types,
+          changing a property in the "copy" will automatically change it in the 
+          "original." This leads to bugs that are very hard to track.
+            
+        ========================================= */
+            #endregion
+
+            #region Q4 :
+            /*
+          Console.WriteLine($"{e1.Title} - {e1.Dept.Name}");  Dev - Testing
+          Console.WriteLine($"{e2.Title} - {e2.Dept.Name}");  QA - Testing
+        -------------------------------
+
+         Title (string): It is a reference type, 
+          but strings are immutable. When you assign "QA" to e2.Title,
+          it creates a new string for e2 without affecting e1.
+
+          Dept (Class): This is a reference type.
+          MemberwiseClone() creates a Shallow Copy,
+         meaning it only copies the memory address (pointer) of the Dept object.
+
+        Result: Both e1 and e2 point to the same Department object in memory.
+         Therefore, when you change e2.Dept.Name, it updates the shared object, 
+        reflecting the change for both e1 and e2
+
+
+
+                    
+            */
+            #endregion
+
+
+
+
+
 
             #endregion
+
+
+
+
         }
     }
 }
