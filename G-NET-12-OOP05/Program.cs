@@ -1,4 +1,6 @@
-﻿namespace G_NET_12_OOP05
+﻿using G_NET_12_OOP05.NewFolder;
+
+namespace G_NET_12_OOP05
 {
     internal class Program
     {
@@ -30,7 +32,7 @@
             #endregion
 
 
-            // ============================================================================
+            // ===========================================================
 
             #region  Q2 :
             /* 
@@ -149,21 +151,54 @@
 
         Result: Both e1 and e2 point to the same Department object in memory.
          Therefore, when you change e2.Dept.Name, it updates the shared object, 
-        reflecting the change for both e1 and e2
+        reflecting the change for both e1 and e2 
+        */
+            #endregion
+
+            #endregion
 
 
+            #region Part 02 : Practical(Extending the Movie Ticket Booking System)
+            /*
+            Console.WriteLine("========= Cinema Opened ========");
 
-                    
+         StandardTicket t1 = new StandardTicket      ( 1 , "Inception" , "A5",80m );
+         VIPTicket      t2 = new VIPTicket           ( 2 , "Avengers" , 200m, true , 50);
+         IMAXTicket     t3 = new IMAXTicket          ( 3 , "Dune" , 130m , true);
+
+            t1.Book(); t2.Book(); t3.Book();
+
+            Console.WriteLine("-------- All Tickets -------");
+
+            IPrintable[] allTicket =
+            {
+                t1,
+                t2,
+                t3
+            };
+
+            foreach (var t in allTicket)  t.PrintInfo ();
+         //--------------------------------------------
+            Console.WriteLine("\n------ Clone Test ------");
+
+            VIPTicket t4 = (VIPTicket) t2.Clone();
+            t4.TicketId  = 4;
+            t4.MovieName = "Interstellar" ;
+            t4.Cancel();
+
+            Console.Write("Original : "); t2.PrintInfo();
+            Console.Write(" Clone  :  "); t4.PrintInfo();
+            //----------------------------------------------
+            Console.WriteLine("\n----After Cancellation----");
+            t1 .Cancel();
+            t1 .PrintInfo();
+
+            BookingHelper.PrintAll(allTicket);
+
+            Console.WriteLine("\n====== Cinema Closed ========");
+
             */
             #endregion
-
-
-
-
-
-
-            #endregion
-
 
 
 
