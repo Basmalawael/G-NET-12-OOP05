@@ -7,7 +7,7 @@
             #region Part 01 : Theoretical Questions
 
             #region Q1 :
-            /*
+            /* 
             * What is an Interface?
             An Interface is a "contract" that defines a set of methods and properties without implementing them.
             It tells a class what to do, but not how to do it.
