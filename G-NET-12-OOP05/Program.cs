@@ -33,7 +33,7 @@
             // ============================================================================
 
             #region  Q2 :
-            /*
+            /* 
              a) What is the problem with this design?Both interfaces have a method called Greet() 
               — how does the class handle it currently?
 
